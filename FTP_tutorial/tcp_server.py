@@ -38,4 +38,14 @@ if __name__ == "__main__":
             else:
                 fo.write(data)
                 data=conn[0].recv(1024).decode()
+        print()
+        print("Receving file from client",idx)
+        print()
+        print('Received succesfully! New filename is:',filename)
+        fo.close()
+
+    #closing connection
+    for conn in connections:
+        conn[0].close()
+
 
